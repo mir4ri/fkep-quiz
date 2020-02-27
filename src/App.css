@@ -1,0 +1,192 @@
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.bg-container {
+  position: relative;
+  max-width: 800px;
+  margin: 15em auto;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.bg-gradient {
+  background: linear-gradient(118.19deg, #90f1ed, #b586f1);
+  background-size: 300% 300%;
+  border-radius: 12px;
+  filter: blur(1px);
+  position: absolute;
+  width: 800px;
+  height: 338px;
+  padding: 1px;
+  z-index: -1;
+  animation: 8s ease infinite running linearGradient;
+}
+
+@keyframes linearGradient {
+  0% {
+    background-position: 0% 60%;
+  }
+  50% {
+    background-position: 100% 41%;
+  }
+  100% {
+    background-position: 0% 60%;
+  }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font-family: sans-serif;
+}
+
+/* Result Component */
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+  height: 339px;
+}
+
+/* Quiz Component */
+.answerOptions {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  height: 218px;
+}
+
+/* QuestionCount Component */
+.questionCount {
+  padding: 1.5rem 2.5rem 0;
+  font-size: 14px;
+}
+
+/* Question Component */
+.question {
+  margin: 0;
+  padding: 1rem 2.5rem;
+  height: 80px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+/* AnswerOption Component */
+.answerOption {
+  height: 100%;
+}
+
+.answerOption:hover {
+  background: linear-gradient(143deg, rgba(42, 203, 243, 0.2), rgba(139, 75, 223, 0.3));
+}
+.answerOption:last-child:hover {
+  border-bottom-right-radius: 12px;
+}
+.answerOption:nth-child(3):hover {
+  border-bottom-left-radius: 12px;
+}
+
+.radioCustomButton {
+  position: absolute;
+  width: auto;
+  opacity: 0;
+}
+
+.radioCustomButton,
+.radioCustomLabel {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.radioCustomLabel {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0 2.5rem 0 5rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.radioCustomButton ~ .radioCustomLabel:before {
+  position: absolute;
+  top: 43px;
+  left: 38px;
+  width: 22px;
+  height: 22px;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background: #fff;
+  border: 0.5px solid #f5f5f5;
+ 
+  border-radius: 25%;
+  transition: all 0.3s;
+}
+
+.radioCustomButton:focus ~ .radioCustomLabel:before {
+  content: "";
+  background: #2acbf3 url(./svg/icon-check.svg) no-repeat;
+  background-size: 21px;
+  border-color: #2acbf3;
+}
+
+/* Animation */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0.3s;
+}
+
+.fade-leave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
